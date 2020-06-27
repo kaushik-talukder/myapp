@@ -1,0 +1,4 @@
+<app-employee-form (listenEmployeeRegistered) = "onEmployeeRegistered($event)"></app-employee-form>
+<hr>
+Registered Employees
+<app-employee *ngFor = "let emp of employeeList" [inEmployee] = "emp"></app-employee>

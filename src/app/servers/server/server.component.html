@@ -1,0 +1,7 @@
+<p>Lets create a server !</p>
+Enter server name <input type="text" class="form-control" (input)="getServerName($event)">
+<br>
+Enter server IP <input type="text" class="form-control" [(ngModel)]="serverIp">
+<br>
+<button class="btn btn-primary" (click) = "onCreateServer()">Create server</button>
+<p>{{serverCreateStatus}}</p>
