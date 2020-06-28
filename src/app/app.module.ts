@@ -12,6 +12,26 @@ import { EmployeeComponent } from './employees/employee/employee.component';
 import { StudentsComponent } from './students/students.component';
 import { StudentFormComponent } from './students/student-form/student-form.component';
 import { StudentComponent } from './students/student/student.component';
+import { Routes, RouterModule } from '@angular/router';
+
+const appRoutes : Routes = [
+  {
+    path:'',
+    component: ServersComponent
+  },
+  {
+    path:'servers',
+    component: ServersComponent
+  },
+  {
+    path:'employees',
+    component: EmployeesComponent
+  },
+  {
+    path:'students',
+    component: StudentsComponent
+  }
+];
 
 @NgModule({
   declarations: [
@@ -28,7 +48,8 @@ import { StudentComponent } from './students/student/student.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]

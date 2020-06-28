@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-server',
@@ -12,7 +13,7 @@ export class ServerComponent implements OnInit {
   serverCreateStatus:String = 'There is no server';
   serverIp:String = '';
 
-  constructor() { 
+  constructor(private router:Router) { 
     
   }
 
@@ -25,5 +26,9 @@ export class ServerComponent implements OnInit {
   }
   onCreateServer(): void {
     this.serverCreateStatus = 'Server is created. Server name is '+ this.serverName +' and server IP is '+ this.serverIp;
+  }
+  onReload(){
+    console.log('adsa');
+    this.router.navigate(['servers']);
   }
 }
