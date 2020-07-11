@@ -1,8 +1,8 @@
 export class Student {
-    name:string;
-    school:string;
-   
+    name: string;
+    school: string;
+    address: string;
     constructor(){
-        
+
     }
 }
