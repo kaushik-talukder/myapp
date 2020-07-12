@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {CoronaApiService} from './corona-api.service';
+import {CoronaReport} from './corona-report';
 
 @Component({
   selector: 'app-corona-report',
@@ -8,15 +9,19 @@ import {CoronaApiService} from './corona-api.service';
 })
 export class CoronaReportComponent implements OnInit {
   stateName = '';
-  constructor(private coronaApiService: CoronaApiService) { }
+  coronaReport: CoronaReport = null;
+
+  constructor(private coronaApiService: CoronaApiService) {
+  }
 
   ngOnInit(): void {
   }
 
   getReport(): void {
     console.log(this.stateName);
-    this.coronaApiService.getReport(this.stateName).subscribe((data) => {
-      console.log(data);
+    this.coronaApiService.getReport(this.stateName).subscribe((data: CoronaReport) => {
+      this.coronaReport = data;
+      console.log(this.coronaReport);
     });
   }
 }
