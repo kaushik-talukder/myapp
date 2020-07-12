@@ -5,8 +5,7 @@
   </div>
   <div class="col-lg-4">
     <select class="form-control" [(ngModel)]="stateName">
-      <option value="Texas">Texas</option>
-      <option value="Massachusetts">Massachusetts</option>
+      <option *ngFor="let state of usaStates" value="{{state.name}}">{{state.name}}</option>
     </select>
   </div>
 </div>
